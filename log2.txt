@@ -1,0 +1,39 @@
+k2@laptop ~/t/devops (main)> git remote add origin https://SergeyJarets@bitbucket.org/SergeyJarets/devops.git
+fatal: внешний репозиторий origin уже существует
+k2@laptop ~/t/devops (main)> git remote add bit https://SergeyJarets@bitbucket.org/SergeyJarets/devops.git
+k2@laptop ~/t/devops (main)> git push -u bit main
+Password for 'https://SergeyJarets@bitbucket.org': ⏎                                                                                                                                                               k2@laptop ~/t/devops (main)> git remote del bit https://SergeyJarets@bitbucket.org/SergeyJarets/devops.git
+error: Неизвестная подкоманда: del
+использование: git remote [-v | --verbose]
+          или: git remote add [-t <ветка>] [-m <мастер-ветка>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <имя> <адрес>
+          или: git remote rename <старое-название> <новое-название>
+          или: git remote remove <имя>
+          или: git remote set-head <имя> (-a | --auto | -d | --delete | <ветка>)
+          или: git remote [-v | --verbose] show [-n] <имя>
+          или: git remote prune [-n | --dry-run] <имя>
+          или: git remote [-v | --verbose] update [-p | --prune] [(<группа> | <имя-внешнего-репозитория>)…]
+          или: git remote set-branches [--add] <имя> <ветка>…
+          или: git remote get-url [--push] [--all] <имя>
+          или: git remote set-url [--push] <имя> <новый-url> [<старый-url>]
+          или: git remote set-url --add <имя> <новый-url>
+          или: git remote set-url --delete <имя> <url>
+
+    -v, --verbose         быть многословнее; должно стоять перед подкомандой
+
+k2@laptop ~/t/devops (main)> git remote remove bit
+k2@laptop ~/t/devops (main)> git remote add bit https://SergioJarets@bitbucket.org/SergioJarets/devops.git
+k2@laptop ~/t/devops (main)> git push -u bit main
+Password for 'https://SergioJarets@bitbucket.org': 
+Перечисление объектов: 12, готово.
+Подсчет объектов: 100% (12/12), готово.
+При сжатии изменений используется до 8 потоков
+Сжатие объектов: 100% (10/10), готово.
+Запись объектов: 100% (12/12), 1.15 KiB | 294.00 KiB/s, готово.
+Total 12 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: 
+remote: Create pull request for main:
+remote:   https://bitbucket.org/SergioJarets/devops/pull-requests/new?source=main&t=1
+remote: 
+To https://bitbucket.org/SergioJarets/devops.git
+ * [new branch]      main -> main
+Ветка «main» отслеживает внешнюю ветку «main» из «bit».

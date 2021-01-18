@@ -1,0 +1,165 @@
+k2@laptop ~/tmp> mkdir devops
+k2@laptop ~/tmp> cd devops/
+k2@laptop ~/t/devops> git flow init
+git: «flow» не является командой git. Смотрите «git --help».
+
+Самые похожие команды:
+    reflog
+    show
+k2@laptop ~/t/devops [1]> echo "# devops" >> README.md
+k2@laptop ~/t/devops> git init
+Инициализирован пустой репозиторий Git в /home/k2/tmp/devops/.git/
+k2@laptop ~/t/devops (master)> git add README.md 
+k2@laptop ~/t/devops (master)> git commit -m "first commit"
+[master (корневой коммит) d9ef4b7] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+k2@laptop ~/t/devops (master)> git branch -M main
+k2@laptop ~/t/devops (main)> 
+git remote add origin https://github.com/k2name/devops.git
+k2@laptop ~/t/devops (main)> git push -u origin main
+Username for 'https://github.com': k2name
+Password for 'https://k2name@github.com': 
+Перечисление объектов: 3, готово.
+Подсчет объектов: 100% (3/3), готово.
+Запись объектов: 100% (3/3), 219 bytes | 219.00 KiB/s, готово.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/k2name/devops.git
+ * [new branch]      main -> main
+Ветка «main» отслеживает внешнюю ветку «main» из «origin».
+k2@laptop ~/t/devops (main)> git config --list --show-origin
+file:/home/k2/.gitconfig        user.email=jarets@amigo.by
+file:/home/k2/.gitconfig        user.name=Sergio Jarets
+file:.git/config        core.repositoryformatversion=0
+file:.git/config        core.filemode=true
+file:.git/config        core.bare=false
+file:.git/config        core.logallrefupdates=true
+file:.git/config        remote.origin.url=https://github.com/k2name/devops.git
+file:.git/config        remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config        branch.main.remote=origin
+file:.git/config        branch.main.merge=refs/heads/main
+k2@laptop ~/t/devops (main)> git add nginx.conf 
+k2@laptop ~/t/devops (main)> git commit -m "second commit"
+[main 0be120a] second commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 nginx.conf
+k2@laptop ~/t/devops (main)> git push -u origin main
+Username for 'https://github.com': pkatOEv8IwiL9ahGZwJh
+Password for 'https://pkatOEv8IwiL9ahGZwJh@github.com': ⏎                                                                                                                                                          k2@laptop ~/t/devops (main) [SIGINT]> git push -u origin main
+Username for 'https://github.com': k2name
+Password for 'https://k2name@github.com': 
+Ветка «main» отслеживает внешнюю ветку «main» из «origin».
+Everything up-to-date
+k2@laptop ~/t/devops (main)> git add README.md 
+k2@laptop ~/t/devops (main)> git commit -m "3 commit"
+[main 7ec1fcc] 3 commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 nginx.conf
+k2@laptop ~/t/devops (main)> git push -u origin main
+Username for 'https://github.com': k2name
+Password for 'https://k2name@github.com': 
+To https://github.com/k2name/devops.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: не удалось отправить некоторые ссылки в «https://github.com/k2name/devops.git»
+подсказка: Обновления были отклонены, так как верхушка вашей текущей ветки
+подсказка: позади ее внешней части. Заберите и слейте внешние изменения 
+подсказка: (например, с помощью «git pull …») перед повторной попыткой отправки
+подсказка: изменений.
+подсказка: Для дополнительной информации, смотрите «Note about fast-forwards»
+подсказка: в «git push --help».
+k2@laptop ~/t/devops (main) [1]> git push -u origin main
+Username for 'https://github.com': k2name
+Password for 'https://k2name@github.com': 
+Перечисление объектов: 5, готово.
+Подсчет объектов: 100% (5/5), готово.
+При сжатии изменений используется до 8 потоков
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (3/3), 382 bytes | 382.00 KiB/s, готово.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/k2name/devops.git
+   0be120a..22447ae  main -> main
+Ветка «main» отслеживает внешнюю ветку «main» из «origin».
+k2@laptop ~/t/devops (main)> git log
+commit 22447ae3b7dd18facb5c0da85541f1811d14b0fc (HEAD -> main, origin/main)
+Author: k2name <sergio_j@tut.by>
+Date:   Mon Jan 18 22:16:37 2021 +0300
+
+    3 commit
+
+commit 0be120a7c2ee2c8bcfe6fbf219b75b2404f198d0
+Author: k2name <sergio_j@tut.by>
+Date:   Mon Jan 18 21:18:52 2021 +0300
+
+    second commit
+
+commit d9ef4b74d2ccf66d3d8e65f8283e5661f09f1303
+Author: Sergio Jarets <jarets@amigo.by>
+Date:   Mon Jan 18 20:36:34 2021 +0300
+
+    first commit
+k2@laptop ~/t/devops (main)> git config --list --show-origin
+file:/home/k2/.gitconfig        user.email=sergio_j@tut.by
+file:/home/k2/.gitconfig        user.name=k2name
+file:.git/config        core.repositoryformatversion=0
+file:.git/config        core.filemode=true
+file:.git/config        core.bare=false
+file:.git/config        core.logallrefupdates=true
+file:.git/config        remote.origin.url=https://github.com/k2name/devops.git
+file:.git/config        remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config        branch.main.remote=origin
+file:.git/config        branch.main.merge=refs/heads/main
+k2@laptop ~/t/devops (main)> git status
+На ветке main
+Ваша ветка обновлена в соответствии с «origin/main».
+
+нечего коммитить, нет изменений в рабочем каталоге
+k2@laptop ~/t/devops (main)> mc
+
+k2@laptop ~/t/devops (main)> пше ыефегы
+fish: Unknown command: пше
+k2@laptop ~/t/devops (main)> git status
+На ветке main
+Ваша ветка обновлена в соответствии с «origin/main».
+
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (use "git restore <file>..." to discard changes in working directory)
+    изменено:      nginx.conf
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+k2@laptop ~/t/devops (main)> git commit -m "4 commit"
+На ветке main
+Ваша ветка обновлена в соответствии с «origin/main».
+
+Изменения, которые не в индексе для коммита:
+  (используйте «git add <файл>…», чтобы добавить файл в индекс)
+  (use "git restore <file>..." to discard changes in working directory)
+    изменено:      nginx.conf
+
+нет изменений добавленных для коммита
+(используйте «git add» и/или «git commit -a»)
+k2@laptop ~/t/devops (main)> git add nginx.conf 
+k2@laptop ~/t/devops (main)> git commit -m "4 commit"
+[main 0e3bd0e] 4 commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+k2@laptop ~/t/devops (main)> git push -u origin main
+Username for 'https://github.com': k2name
+Password for 'https://k2name@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/k2name/devops.git/'
+k2@laptop ~/t/devops (main)> git push -u origin main
+Username for 'https://github.com': k2name
+Password for 'https://k2name@github.com': 
+Перечисление объектов: 5, готово.
+Подсчет объектов: 100% (5/5), готово.
+При сжатии изменений используется до 8 потоков
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (3/3), 344 bytes | 344.00 KiB/s, готово.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/k2name/devops.git
+   22447ae..0e3bd0e  main -> main
+Ветка «main» отслеживает внешнюю ветку «main» из «origin».
+k2@laptop ~/t/devops (main)> 
+
